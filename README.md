@@ -31,7 +31,7 @@ The project demonstrates complete proficiency across the entire data lifecycle:
 Run the unified interactive portfolio locally or access the web app:
 
 ```bash
-# 1. Run local server (opens automatically at http://localhost:8002/)
+1. Run local server (opens automatically at http://localhost:8002/)
 python server.py
 
 # Or double-click run_local.bat on Windows

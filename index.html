@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Walmart Market Business Intelligence Dashboard | Created by Aman Dwivedi</title>
+  <title>Walmart Market Data Analytics Portfolio | Created by Aman Dwivedi</title>
   
   <!-- Meta tags for SEO & Social Sharing -->
-  <meta name="description" content="Walmart Market End-to-End Business Intelligence Report (Canada, Mexico, USA) - Created by Aman Dwivedi using Power BI, DAX & Modern Analytics." />
+  <meta name="description" content="Walmart Market End-to-End Data Analytics Platform (Python, SQL, Power BI, Excel, Tableau) - Created by Aman Dwivedi." />
   <meta name="author" content="Aman Dwivedi" />
 
   <!-- Tailwind CSS CDN -->
@@ -41,9 +41,12 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
     body {
       font-family: 'Inter', sans-serif;
+    }
+    code, pre {
+      font-family: 'Fira Code', monospace;
     }
     .custom-scrollbar::-webkit-scrollbar {
       width: 6px;
@@ -80,57 +83,78 @@
           </div>
           <div>
             <h1 class="text-base sm:text-lg font-bold leading-tight flex items-center gap-2">
-              Walmart Market Report
-              <span class="text-xs bg-walmart-blue text-white px-2 py-0.5 rounded-full font-medium hidden sm:inline">USA • MEX • CAN</span>
+              Walmart Market Analytics Suite
+              <span class="text-[11px] bg-walmart-blue text-white px-2 py-0.5 rounded-full font-medium hidden sm:inline">Python • SQL • Power BI • Excel • Tableau</span>
             </h1>
-            <p class="text-xs text-slate-300">Executive BI Analytics & Performance Dashboard</p>
+            <p class="text-xs text-slate-300">End-to-End Enterprise Data Analytics & Business Intelligence</p>
           </div>
         </div>
 
-        <!-- Author Attribution Badge & Actions -->
+        <!-- Author Attribution Badge & Download Dropdown -->
         <div class="flex items-center gap-3">
-          <div class="bg-slate-800/80 border border-slate-700/60 rounded-full px-3 py-1 flex items-center gap-2 text-xs text-slate-200 shadow-inner">
+          <div class="bg-slate-800/90 border border-slate-700/80 rounded-full px-3 py-1 flex items-center gap-2 text-xs text-slate-200 shadow-inner">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             <span>Created by <strong class="text-walmart-yellow font-semibold">Aman Dwivedi</strong></span>
           </div>
           
-          <!-- Download PBIX Button -->
-          <a href="Wallmart Market Report(Power BI).pbix" download class="hidden md:inline-flex items-center gap-1.5 bg-walmart-blue hover:bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded transition shadow-sm">
-            <i data-lucide="download" class="w-3.5 h-3.5"></i>
-            <span>PBIX File</span>
+          <!-- Quick Download Assets -->
+          <a href="excel/walmart_executive_model.xlsx" download class="hidden lg:inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-2.5 py-1.5 rounded transition shadow-sm">
+            <i data-lucide="file-spreadsheet" class="w-3.5 h-3.5"></i>
+            <span>Excel Model</span>
           </a>
 
-          <!-- PDF Report Download -->
-          <a href="wallamart power bi dashboard.pdf" target="_blank" class="hidden md:inline-flex items-center gap-1.5 bg-slate-700 hover:bg-slate-600 text-white text-xs font-semibold px-3 py-1.5 rounded transition shadow-sm">
-            <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-            <span>PDF Report</span>
+          <a href="Wallmart Market Report(Power BI).pbix" download class="hidden md:inline-flex items-center gap-1.5 bg-walmart-blue hover:bg-blue-600 text-white text-xs font-semibold px-2.5 py-1.5 rounded transition shadow-sm">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i>
+            <span>PBIX</span>
           </a>
         </div>
       </div>
     </div>
 
-    <!-- TABS BAR (Simulating Power BI Multi-Page Dashboard) -->
+    <!-- TABS BAR: 5 Core Tools + Media -->
     <div class="bg-slate-900 border-t border-slate-800 px-4 sm:px-6 lg:px-8">
-      <div class="max-w-7xl mx-auto flex gap-2 overflow-x-auto custom-scrollbar py-2 text-xs font-medium">
-        <button onclick="switchTab('topline')" id="tab-btn-topline" class="tab-btn active px-3.5 py-1.5 rounded flex items-center gap-2 bg-walmart-blue text-white font-semibold transition">
+      <div class="max-w-7xl mx-auto flex gap-1.5 overflow-x-auto custom-scrollbar py-2 text-xs font-medium">
+        
+        <!-- Tab 1: Power BI -->
+        <button onclick="switchTab('powerbi')" id="tab-btn-powerbi" class="tab-btn active px-3 py-1.5 rounded flex items-center gap-1.5 bg-walmart-blue text-white font-semibold transition">
           <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
-          <span>Topline Performance</span>
+          <span>📊 Power BI Dashboard</span>
         </button>
-        <button onclick="switchTab('notes')" id="tab-btn-notes" class="tab-btn px-3.5 py-1.5 rounded flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800 transition">
-          <i data-lucide="bookmark-check" class="w-4 h-4"></i>
-          <span>Market Notes & Insights</span>
+
+        <!-- Tab 2: Python & OLS -->
+        <button onclick="switchTab('python')" id="tab-btn-python" class="tab-btn px-3 py-1.5 rounded flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-800 transition">
+          <i data-lucide="binary" class="w-4 h-4 text-emerald-400"></i>
+          <span>🐍 Python & OLS Regression</span>
         </button>
-        <button onclick="switchTab('dax')" id="tab-btn-dax" class="tab-btn px-3.5 py-1.5 rounded flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800 transition">
-          <i data-lucide="database" class="w-4 h-4"></i>
-          <span>Data Model & DAX Schema</span>
+
+        <!-- Tab 3: SQL Suite -->
+        <button onclick="switchTab('sql')" id="tab-btn-sql" class="tab-btn px-3 py-1.5 rounded flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-800 transition">
+          <i data-lucide="database" class="w-4 h-4 text-amber-400"></i>
+          <span>🗄️ SQL Analytics Studio</span>
         </button>
-        <button onclick="switchTab('video')" id="tab-btn-video" class="tab-btn px-3.5 py-1.5 rounded flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800 transition">
-          <i data-lucide="play-circle" class="w-4 h-4"></i>
-          <span>Video Demo</span>
+
+        <!-- Tab 4: Excel Financials -->
+        <button onclick="switchTab('excel')" id="tab-btn-excel" class="tab-btn px-3 py-1.5 rounded flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-800 transition">
+          <i data-lucide="file-spreadsheet" class="w-4 h-4 text-emerald-300"></i>
+          <span>📑 Excel Financial Model</span>
         </button>
-        <button onclick="switchTab('pdf')" id="tab-btn-pdf" class="tab-btn px-3.5 py-1.5 rounded flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800 transition">
-          <i data-lucide="file-text" class="w-4 h-4"></i>
-          <span>PDF Preview</span>
+
+        <!-- Tab 5: Tableau Blueprints -->
+        <button onclick="switchTab('tableau')" id="tab-btn-tableau" class="tab-btn px-3 py-1.5 rounded flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-800 transition">
+          <i data-lucide="pie-chart" class="w-4 h-4 text-blue-300"></i>
+          <span>📈 Tableau Architecture</span>
+        </button>
+
+        <!-- Tab 6: Video Walkthrough -->
+        <button onclick="switchTab('video')" id="tab-btn-video" class="tab-btn px-3 py-1.5 rounded flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-800 transition">
+          <i data-lucide="play-circle" class="w-4 h-4 text-rose-400"></i>
+          <span>🎬 Video Demo</span>
+        </button>
+
+        <!-- Tab 7: PDF Report -->
+        <button onclick="switchTab('pdf')" id="tab-btn-pdf" class="tab-btn px-3 py-1.5 rounded flex items-center gap-1.5 text-slate-300 hover:text-white hover:bg-slate-800 transition">
+          <i data-lucide="file-text" class="w-4 h-4 text-slate-300"></i>
+          <span>📄 PDF Report</span>
         </button>
       </div>
     </div>
@@ -140,18 +164,18 @@
   <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
 
     <!-- ========================================================================= -->
-    <!-- TAB 1: TOPLINE PERFORMANCE (MAIN DASHBOARD) -->
+    <!-- TAB 1: POWER BI & TOPLINE PERFORMANCE DASHBOARD -->
     <!-- ========================================================================= -->
-    <div id="tab-content-topline" class="tab-pane space-y-6">
+    <div id="tab-content-powerbi" class="tab-pane space-y-6">
       
       <!-- Top Filters / Region Slicer Bar -->
       <div class="bg-white rounded-xl shadow-sm border border-slate-200/80 p-4 flex flex-wrap items-center justify-between gap-4">
         <div class="flex items-center gap-2 flex-wrap">
           <span class="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5 mr-2">
-            <i data-lucide="filter" class="w-3.5 h-3.5"></i> Region Filter:
+            <i data-lucide="filter" class="w-3.5 h-3.5"></i> Geographic Slicer:
           </span>
           <button onclick="filterRegion('all')" id="filter-all" class="region-btn px-3 py-1 text-xs font-semibold rounded-lg bg-walmart-blue text-white shadow-sm transition">
-            All Regions
+            🌎 All Regions
           </button>
           <button onclick="filterRegion('USA')" id="filter-usa" class="region-btn px-3 py-1 text-xs font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
             🇺🇸 USA
@@ -164,7 +188,6 @@
           </button>
         </div>
 
-        <!-- Year & Dynamic Status -->
         <div class="flex items-center gap-3 text-xs text-slate-600">
           <span class="bg-blue-50 text-walmart-blue font-medium px-2.5 py-1 rounded border border-blue-100 flex items-center gap-1">
             <i data-lucide="calendar" class="w-3 h-3"></i> Year: <strong>1998</strong>
@@ -178,7 +201,7 @@
       <!-- KPI METRICS CARDS -->
       <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         
-        <!-- KPI 1: Current Month Transactions -->
+        <!-- KPI 1 -->
         <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 relative overflow-hidden">
           <div class="flex items-center justify-between mb-1">
             <span class="text-xs font-semibold uppercase text-slate-500 tracking-wider">Current Month Txns</span>
@@ -188,13 +211,12 @@
           </div>
           <div class="text-2xl font-extrabold text-slate-900" id="kpi-txns">18,325</div>
           <p class="text-xs text-slate-500 mt-0.5">Target: <span class="font-medium text-slate-700" id="kpi-txns-target">17,339</span></p>
-          
           <div class="sparkline-container mt-2">
             <canvas id="sparklineTxns"></canvas>
           </div>
         </div>
 
-        <!-- KPI 2: Current Month Profit -->
+        <!-- KPI 2 -->
         <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 relative overflow-hidden">
           <div class="flex items-center justify-between mb-1">
             <span class="text-xs font-semibold uppercase text-slate-500 tracking-wider">Current Month Profit</span>
@@ -204,29 +226,27 @@
           </div>
           <div class="text-2xl font-extrabold text-emerald-600" id="kpi-profit">$71,682</div>
           <p class="text-xs text-slate-500 mt-0.5">Target: <span class="font-medium text-slate-700" id="kpi-profit-target">$67,872</span></p>
-          
           <div class="sparkline-container mt-2">
             <canvas id="sparklineProfit"></canvas>
           </div>
         </div>
 
-        <!-- KPI 3: Current Month Returns -->
+        <!-- KPI 3 -->
         <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 relative overflow-hidden">
           <div class="flex items-center justify-between mb-1">
             <span class="text-xs font-semibold uppercase text-slate-500 tracking-wider">Current Month Returns</span>
-            <span class="bg-rose-50 text-rose-600 text-[11px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5" title="Returns increased compared to last month">
+            <span class="bg-rose-50 text-rose-600 text-[11px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
               <i data-lucide="alert-circle" class="w-3 h-3"></i> -2.90%
             </span>
           </div>
           <div class="text-2xl font-extrabold text-rose-600" id="kpi-returns">496</div>
           <p class="text-xs text-slate-500 mt-0.5">Target (Low is good): <span class="font-medium text-slate-700" id="kpi-returns-target">482</span></p>
-          
           <div class="sparkline-container mt-2">
             <canvas id="sparklineReturns"></canvas>
           </div>
         </div>
 
-        <!-- KPI 4: Total Annual Revenue -->
+        <!-- KPI 4 -->
         <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 relative overflow-hidden">
           <div class="flex items-center justify-between mb-1">
             <span class="text-xs font-semibold uppercase text-slate-500 tracking-wider">Total Net Revenue</span>
@@ -236,7 +256,6 @@
           </div>
           <div class="text-2xl font-extrabold text-walmart-blue" id="kpi-revenue">$449,627</div>
           <p class="text-xs text-slate-500 mt-0.5">Avg Margin: <span class="font-medium text-slate-700" id="kpi-margin">59.94%</span></p>
-          
           <div class="sparkline-container mt-2">
             <canvas id="sparklineRevenue"></canvas>
           </div>
@@ -247,7 +266,7 @@
       <!-- MIDDLE ROW: MATRIX TABLE & MAP & TREEMAP -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
         
-        <!-- LEFT 7 COLS: PRODUCT BRAND PERFORMANCE MATRIX -->
+        <!-- LEFT 6 COLS: PRODUCT BRAND PERFORMANCE MATRIX -->
         <div class="lg:col-span-6 bg-white rounded-xl shadow-sm border border-slate-200 flex flex-col">
           <div class="p-4 border-b border-slate-100 flex items-center justify-between gap-2 flex-wrap">
             <div>
@@ -257,12 +276,9 @@
               </h2>
               <p class="text-xs text-slate-500">Top Brands ranked by volume, profit & return rate</p>
             </div>
-            <div class="flex items-center gap-2">
-              <input type="text" id="brandSearch" placeholder="Search brand..." oninput="filterBrandTable()" class="px-2.5 py-1 text-xs border border-slate-300 rounded-md focus:outline-none focus:ring-1 focus:ring-walmart-blue" />
-            </div>
+            <input type="text" id="brandSearch" placeholder="Search brand..." oninput="filterBrandTable()" class="px-2.5 py-1 text-xs border border-slate-300 rounded-md focus:outline-none focus:ring-1 focus:ring-walmart-blue" />
           </div>
 
-          <!-- Table Container -->
           <div class="p-2 overflow-x-auto max-h-[380px] custom-scrollbar">
             <table class="w-full text-left text-xs">
               <thead class="bg-slate-50 text-slate-600 font-semibold sticky top-0 z-10 border-b border-slate-200">
@@ -274,14 +290,12 @@
                   <th class="py-2 px-3 text-right">Return %</th>
                 </tr>
               </thead>
-              <tbody id="brandTableBody" class="divide-y divide-slate-100">
-                <!-- Rows injected dynamically via JS -->
-              </tbody>
+              <tbody id="brandTableBody" class="divide-y divide-slate-100"></tbody>
               <tfoot class="bg-slate-100 font-bold text-slate-900 border-t border-slate-300 sticky bottom-0">
                 <tr>
                   <td class="py-2 px-3">Total</td>
-                  <td class="py-2 px-3 text-right" id="foot-txns">113,668</td>
-                  <td class="py-2 px-3 text-right" id="foot-profit">$449,627</td>
+                  <td class="py-2 px-3 text-right">113,668</td>
+                  <td class="py-2 px-3 text-right">$449,627</td>
                   <td class="py-2 px-3 text-right text-emerald-700">59.94%</td>
                   <td class="py-2 px-3 text-right text-rose-600">1.00%</td>
                 </tr>
@@ -290,10 +304,8 @@
           </div>
         </div>
 
-        <!-- RIGHT 6 COLS: GEOGRAPHIC MAP & REGIONAL TREEMAP/BARS -->
+        <!-- RIGHT 6 COLS: GEOGRAPHIC MAP & REGIONAL TREEMAP -->
         <div class="lg:col-span-6 space-y-6">
-          
-          <!-- MAP CONTAINER -->
           <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4 flex flex-col">
             <div class="flex items-center justify-between mb-3">
               <div>
@@ -303,14 +315,12 @@
                 </h2>
                 <p class="text-xs text-slate-500">Store transaction density across USA, Mexico & Canada</p>
               </div>
-              <span class="text-[11px] bg-blue-50 text-walmart-blue font-medium px-2 py-0.5 rounded">Interactive Map</span>
+              <span class="text-[11px] bg-blue-50 text-walmart-blue font-medium px-2 py-0.5 rounded">Leaflet Map</span>
             </div>
-
-            <!-- Leaflet Map Div -->
             <div id="walmartMap" class="w-full h-48 sm:h-52 rounded-lg border border-slate-200 z-0"></div>
           </div>
 
-          <!-- REGIONAL BREAKDOWN (Treemap simulation / Visual breakdown) -->
+          <!-- REGIONAL BREAKDOWN -->
           <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
             <div class="flex items-center justify-between mb-2">
               <h2 class="text-sm font-bold text-slate-800 flex items-center gap-1.5">
@@ -319,31 +329,27 @@
               </h2>
               <span class="text-xs text-slate-500">Drill: Country &rarr; City</span>
             </div>
-
             <div class="grid grid-cols-3 gap-2 text-center text-xs">
               <div class="bg-emerald-500 text-white p-2.5 rounded-lg shadow-sm">
-                <div class="font-bold text-base" id="reg-usa-txns">93.89K</div>
+                <div class="font-bold text-base">93.89K</div>
                 <div class="text-[11px] font-medium opacity-90">USA (52.4%)</div>
               </div>
               <div class="bg-purple-600 text-white p-2.5 rounded-lg shadow-sm">
-                <div class="font-bold text-base" id="reg-mex-txns">72.81K</div>
+                <div class="font-bold text-base">72.81K</div>
                 <div class="text-[11px] font-medium opacity-90">Mexico (40.6%)</div>
               </div>
               <div class="bg-amber-500 text-white p-2.5 rounded-lg shadow-sm">
-                <div class="font-bold text-base" id="reg-can-txns">12.77K</div>
+                <div class="font-bold text-base">12.77K</div>
                 <div class="text-[11px] font-medium opacity-90">Canada (7.0%)</div>
               </div>
             </div>
           </div>
-
         </div>
 
       </div>
 
-      <!-- BOTTOM ROW: WEEKLY REVENUE TRENDING & GAUGE CHART -->
+      <!-- BOTTOM ROW: WEEKLY REVENUE & GAUGE CHART -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        
-        <!-- WEEKLY REVENUE TREND (7 COLS) -->
         <div class="lg:col-span-8 bg-white rounded-xl shadow-sm border border-slate-200 p-4">
           <div class="flex items-center justify-between mb-3">
             <div>
@@ -351,28 +357,23 @@
                 <i data-lucide="bar-chart-3" class="w-4 h-4 text-walmart-blue"></i>
                 Weekly Revenue Trending (1998)
               </h2>
-              <p class="text-xs text-slate-500">52-week revenue fluctuations and seasonal peaks (Q4 Peak)</p>
+              <p class="text-xs text-slate-500">52-week revenue fluctuations & Q4 holiday peaks ($40K+ / week)</p>
             </div>
             <span class="text-xs bg-emerald-50 text-emerald-700 font-semibold px-2 py-0.5 rounded">Dec Peak: $40K+</span>
           </div>
-
           <div class="h-60 w-full">
             <canvas id="weeklyRevenueChart"></canvas>
           </div>
         </div>
 
-        <!-- REVENUE VS TARGET GAUGE (5 COLS) -->
         <div class="lg:col-span-4 bg-white rounded-xl shadow-sm border border-slate-200 p-4 flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-1">
-              <h2 class="text-sm font-bold text-slate-800 flex items-center gap-1.5">
-                <i data-lucide="gauge" class="w-4 h-4 text-walmart-blue"></i>
-                Revenue vs Target Gauge
-              </h2>
-            </div>
+            <h2 class="text-sm font-bold text-slate-800 flex items-center gap-1.5">
+              <i data-lucide="gauge" class="w-4 h-4 text-walmart-blue"></i>
+              Revenue vs Target Gauge
+            </h2>
             <p class="text-xs text-slate-500 mb-2">Current Month Actual ($120K) vs Target ($119.48K)</p>
           </div>
-
           <div class="relative flex items-center justify-center my-auto py-2">
             <div class="w-48 h-28 relative">
               <canvas id="gaugeChart"></canvas>
@@ -382,204 +383,353 @@
               <div class="text-[11px] font-semibold text-emerald-600">Target: $119.48K (100.4%)</div>
             </div>
           </div>
-
           <div class="border-t border-slate-100 pt-2 flex justify-between text-[11px] text-slate-500 font-medium">
             <span>Min: $0K</span>
             <span class="text-emerald-700 font-bold">Target: $119.48K</span>
             <span>Max: $240K</span>
           </div>
         </div>
-
       </div>
 
     </div>
 
     <!-- ========================================================================= -->
-    <!-- TAB 2: MARKET NOTES & INSIGHTS -->
+    <!-- TAB 2: PYTHON & OLS STATISTICAL REGRESSION -->
     <!-- ========================================================================= -->
-    <div id="tab-content-notes" class="tab-pane hidden space-y-6">
-      
+    <div id="tab-content-python" class="tab-pane hidden space-y-6">
       <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-        <div class="border-b border-slate-200 pb-4 mb-6 flex items-center justify-between">
+        <div class="border-b border-slate-200 pb-4 mb-6 flex items-center justify-between flex-wrap gap-3">
           <div>
-            <h2 class="text-xl font-bold text-walmart-dark flex items-center gap-2">
-              <i data-lucide="lightbulb" class="w-6 h-6 text-walmart-yellow"></i>
-              Executive Market Report & Business Insights
+            <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+              <span class="text-emerald-600 font-bold">Python</span> Data Science & Ordinary Least Squares (OLS) Regression
             </h2>
-            <p class="text-xs text-slate-500 mt-1">Key strategic findings extracted by Aman Dwivedi from the Walmart multi-country dataset</p>
+            <p class="text-xs text-slate-500 mt-1">Statistical trend modeling, p-value hypothesis testing, and exploratory data analysis by Aman Dwivedi</p>
           </div>
-          <span class="bg-walmart-blue text-white text-xs font-semibold px-3 py-1 rounded-full">DAX & Storytelling</span>
+          <a href="walmart_data_analytics.ipynb" download class="text-xs bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-3 py-1.5 rounded flex items-center gap-1.5 shadow-sm">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i> Download Jupyter Notebook (.ipynb)
+          </a>
+        </div>
+
+        <!-- Regression Statistics Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+            <div class="text-xs font-semibold text-emerald-800">OLS Weekly Growth Rate</div>
+            <div class="text-xl font-extrabold text-emerald-700 mt-1">+$374.53 / wk</div>
+            <div class="text-[11px] text-emerald-600 mt-0.5">Slope ($\beta_1$)</div>
+          </div>
+
+          <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+            <div class="text-xs font-semibold text-walmart-blue">R-Squared (R²) Score</div>
+            <div class="text-xl font-extrabold text-walmart-blue mt-1">0.7302</div>
+            <div class="text-[11px] text-slate-500 mt-0.5">73.0% Variance Explained</div>
+          </div>
+
+          <div class="bg-purple-50 border border-purple-200 rounded-lg p-3">
+            <div class="text-xs font-semibold text-purple-800">P-Value Significance</div>
+            <div class="text-xl font-extrabold text-purple-700 mt-1">7.81 × 10⁻¹⁶</div>
+            <div class="text-[11px] text-purple-600 mt-0.5">p &lt; 0.001 (Highly Significant)</div>
+          </div>
+
+          <div class="bg-amber-50 border border-amber-200 rounded-lg p-3">
+            <div class="text-xs font-semibold text-amber-800">Standard Error</div>
+            <div class="text-xl font-extrabold text-amber-700 mt-1">± $32.20</div>
+            <div class="text-[11px] text-amber-600 mt-0.5">Residual Std Error</div>
+          </div>
+        </div>
+
+        <!-- Python Generated Visuals -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+            <h3 class="text-xs font-bold text-slate-800 mb-2 flex items-center gap-1.5">
+              <i data-lucide="line-chart" class="w-4 h-4 text-walmart-blue"></i>
+              OLS Linear Trend Regression (Revenue vs Time)
+            </h3>
+            <img src="python/outputs/ols_revenue_trend.png" alt="Python OLS Chart" class="w-full rounded-lg shadow-sm border border-slate-200" />
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+            <h3 class="text-xs font-bold text-slate-800 mb-2 flex items-center gap-1.5">
+              <i data-lucide="scatter-chart" class="w-4 h-4 text-emerald-600"></i>
+              Brand Profit Margin vs Return Rate Risk Scatter
+            </h3>
+            <img src="python/outputs/brand_margin_distribution.png" alt="Margin Distribution" class="w-full rounded-lg shadow-sm border border-slate-200" />
+          </div>
+        </div>
+
+        <!-- Python Code Snippet -->
+        <div class="bg-slate-900 rounded-xl p-4 text-slate-200 text-xs overflow-x-auto custom-scrollbar">
+          <div class="text-slate-400 font-mono mb-2 flex items-center justify-between border-b border-slate-800 pb-2">
+            <span>python/walmart_eda_analysis.py</span>
+            <span class="text-emerald-400">Python 3.13 • SciPy • Seaborn</span>
+          </div>
+<pre><code># OLS Linear Regression Computation in Python
+from scipy import stats
+import pandas as pd
+
+df = pd.read_csv('data/weekly_revenue.csv')
+slope, intercept, r_val, p_val, std_err = stats.linregress(df['week_number'], df['revenue'])
+r_squared = r_val ** 2
+
+print(f"Weekly Growth Velocity: ${slope:.2f}/week | R² = {r_squared:.4f} | P-Value = {p_val:.4e}")
+</code></pre>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: SQL ANALYTICS STUDIO -->
+    <!-- ========================================================================= -->
+    <div id="tab-content-sql" class="tab-pane hidden space-y-6">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <div class="border-b border-slate-200 pb-4 mb-6 flex items-center justify-between flex-wrap gap-3">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="database" class="w-6 h-6 text-amber-500"></i>
+              Enterprise SQL Analytics Studio
+            </h2>
+            <p class="text-xs text-slate-500 mt-1">Window functions, CTEs, Ranking, and Anomaly Detection against SQLite database `walmart_analytics.db`</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="sql/walmart_queries.sql" download class="text-xs bg-amber-600 hover:bg-amber-700 text-white font-semibold px-3 py-1.5 rounded flex items-center gap-1.5 shadow-sm">
+              <i data-lucide="download" class="w-3.5 h-3.5"></i> Download SQL Queries (.sql)
+            </a>
+          </div>
+        </div>
+
+        <!-- Query Tabs -->
+        <div class="space-y-4">
+          <div class="flex gap-2 border-b border-slate-200 pb-2 overflow-x-auto custom-scrollbar text-xs font-semibold">
+            <button onclick="showSqlQuery(1)" id="sql-tab-1" class="sql-tab-btn px-3 py-1.5 rounded bg-amber-500 text-white">Q1: Top 10 Pareto (CTEs)</button>
+            <button onclick="showSqlQuery(2)" id="sql-tab-2" class="sql-tab-btn px-3 py-1.5 rounded bg-slate-100 text-slate-700 hover:bg-slate-200">Q2: MoM Growth (LAG)</button>
+            <button onclick="showSqlQuery(3)" id="sql-tab-3" class="sql-tab-btn px-3 py-1.5 rounded bg-slate-100 text-slate-700 hover:bg-slate-200">Q3: Store Ranking (DENSE_RANK)</button>
+            <button onclick="showSqlQuery(4)" id="sql-tab-4" class="sql-tab-btn px-3 py-1.5 rounded bg-slate-100 text-slate-700 hover:bg-slate-200">Q4: Return Risk Flags (CASE)</button>
+          </div>
+
+          <!-- Query 1 Panel -->
+          <div id="sql-panel-1" class="sql-panel space-y-4">
+            <div class="bg-slate-900 rounded-xl p-4 text-slate-200 text-xs overflow-x-auto custom-scrollbar">
+<pre><code>-- Top 10 Product Brands Pareto Analysis (Transactions, Revenue, Profit & Share)
+WITH BrandRankings AS (
+    SELECT 
+        brand_id, product_brand, category, price_tier,
+        transactions, revenue, profit,
+        ROUND(profit_margin * 100, 2) AS profit_margin_pct,
+        DENSE_RANK() OVER (ORDER BY transactions DESC) AS rank_by_volume,
+        ROUND(revenue / (SELECT SUM(revenue) FROM brands) * 100, 2) AS pct_of_total_revenue
+    FROM brands
+)
+SELECT rank_by_volume, product_brand, category, transactions, revenue, profit, profit_margin_pct, pct_of_total_revenue
+FROM BrandRankings
+WHERE rank_by_volume <= 10;
+</code></pre>
+            </div>
+            
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <div class="bg-slate-50 px-4 py-2 text-xs font-bold text-slate-700 border-b border-slate-200 flex items-center justify-between">
+                <span>Query Result: Top 10 Product Brands</span>
+                <span class="text-emerald-600">Status: 10 rows returned (0.002s)</span>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="w-full text-xs text-left">
+                  <thead class="bg-slate-100 font-semibold text-slate-700 border-b border-slate-200">
+                    <tr><th class="p-2">Rank</th><th class="p-2">Brand</th><th class="p-2">Category</th><th class="p-2 text-right">Txns</th><th class="p-2 text-right">Revenue</th><th class="p-2 text-right">Profit</th><th class="p-2 text-right">Margin %</th><th class="p-2 text-right">Share %</th></tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100">
+                    <tr><td class="p-2 font-bold">1</td><td class="p-2 font-semibold text-walmart-blue">Hermanos</td><td class="p-2">Produce & Grocery</td><td class="p-2 text-right">5,341</td><td class="p-2 text-right font-medium">$37,100</td><td class="p-2 text-right font-semibold text-emerald-700">$21,753</td><td class="p-2 text-right text-emerald-700 font-bold">58.64%</td><td class="p-2 text-right font-bold">5.55%</td></tr>
+                    <tr><td class="p-2 font-bold">2</td><td class="p-2 font-semibold text-walmart-blue">Ebony</td><td class="p-2">Pantry & Spices</td><td class="p-2 text-right">5,238</td><td class="p-2 text-right font-medium">$34,030</td><td class="p-2 text-right font-semibold text-emerald-700">$20,354</td><td class="p-2 text-right text-emerald-700 font-bold">59.81%</td><td class="p-2 text-right font-bold">5.09%</td></tr>
+                    <tr><td class="p-2 font-bold">3</td><td class="p-2 font-semibold text-walmart-blue">Tell Tale</td><td class="p-2">Beverages</td><td class="p-2 text-right">5,132</td><td class="p-2 text-right font-medium">$34,420</td><td class="p-2 text-right font-semibold text-emerald-700">$19,982</td><td class="p-2 text-right text-emerald-700 font-bold">58.05%</td><td class="p-2 text-right font-bold">5.15%</td></tr>
+                    <tr><td class="p-2 font-bold">4</td><td class="p-2 font-semibold text-walmart-blue">Tri-State</td><td class="p-2">Dairy & Eggs</td><td class="p-2 text-right">5,000</td><td class="p-2 text-right font-medium">$33,915</td><td class="p-2 text-right font-semibold text-emerald-700">$19,980</td><td class="p-2 text-right text-emerald-700 font-bold">58.91%</td><td class="p-2 text-right font-bold">5.08%</td></tr>
+                    <tr><td class="p-2 font-bold">5</td><td class="p-2 font-semibold text-walmart-blue">High Top</td><td class="p-2">Bakery & Snacks</td><td class="p-2 text-right">4,840</td><td class="p-2 text-right font-medium">$32,785</td><td class="p-2 text-right font-semibold text-emerald-700">$19,810</td><td class="p-2 text-right text-emerald-700 font-bold">60.42%</td><td class="p-2 text-right font-bold">4.91%</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Query 2 Panel -->
+          <div id="sql-panel-2" class="sql-panel hidden space-y-4">
+            <div class="bg-slate-900 rounded-xl p-4 text-slate-200 text-xs overflow-x-auto custom-scrollbar">
+<pre><code>-- Month-over-Month (MoM) Window Calculations using LAG()
+WITH MonthlyAggs AS (
+    SELECT month, SUM(revenue) AS monthly_revenue, SUM(profit) AS monthly_profit, SUM(transactions) AS monthly_txns
+    FROM weekly_revenue GROUP BY month
+)
+SELECT 
+    month,
+    monthly_revenue,
+    monthly_profit,
+    ROUND(((monthly_revenue - LAG(monthly_revenue, 1) OVER (ORDER BY month)) / LAG(monthly_revenue, 1) OVER (ORDER BY month)) * 100, 2) || '%' AS rev_mom_growth
+FROM MonthlyAggs;
+</code></pre>
+            </div>
+          </div>
+
+          <!-- Query 3 Panel -->
+          <div id="sql-panel-3" class="sql-panel hidden space-y-4">
+            <div class="bg-slate-900 rounded-xl p-4 text-slate-200 text-xs overflow-x-auto custom-scrollbar">
+<pre><code>-- Store Ranking Partitioned by Country & Portland Milestone Check
+SELECT 
+    s.store_country, s.store_name, s.store_city, s.transactions, s.december_txns,
+    DENSE_RANK() OVER (PARTITION BY s.store_country ORDER BY s.transactions DESC) AS country_rank,
+    CASE 
+        WHEN s.december_txns >= 1000 THEN '🎯 1,000+ Milestone Achieved'
+        ELSE 'Standard'
+    END AS benchmark_status
+FROM stores s
+JOIN regions r ON s.region_id = r.region_id
+ORDER BY s.store_country, country_rank;
+</code></pre>
+            </div>
+          </div>
+
+          <!-- Query 4 Panel -->
+          <div id="sql-panel-4" class="sql-panel hidden space-y-4">
+            <div class="bg-slate-900 rounded-xl p-4 text-slate-200 text-xs overflow-x-auto custom-scrollbar">
+<pre><code>-- Return Rate Anomaly Detection with Conditional CASE Flags
+SELECT 
+    product_brand, category, transactions, returns_count,
+    ROUND(return_rate * 100, 2) || '%' AS return_rate_pct,
+    CASE 
+        WHEN return_rate >= 0.0110 THEN '🚨 HIGH RISK ANOMALY (Action Required)'
+        WHEN return_rate >= 0.0100 THEN '⚠️ Moderate Risk'
+        ELSE '✅ Healthy (<1.00%)'
+    END AS quality_flag
+FROM brands
+ORDER BY return_rate DESC;
+</code></pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: EXCEL FINANCIAL MODEL -->
+    <!-- ========================================================================= -->
+    <div id="tab-content-excel" class="tab-pane hidden space-y-6">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <div class="border-b border-slate-200 pb-4 mb-6 flex items-center justify-between flex-wrap gap-3">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="file-spreadsheet" class="w-6 h-6 text-emerald-600"></i>
+              Excel Executive Financial Model & Workbook
+            </h2>
+            <p class="text-xs text-slate-500 mt-1">Multi-sheet dynamic model with `SUMIFS`, `XLOOKUP`, margin calculations, and conditional formatting</p>
+          </div>
+          <a href="excel/walmart_executive_model.xlsx" download class="text-xs bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-3 py-1.5 rounded flex items-center gap-1.5 shadow-sm">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i> Download Excel Model (.xlsx)
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+            <div class="font-bold text-sm text-slate-900 flex items-center gap-1.5 mb-1 text-emerald-700">
+              <i data-lucide="sheet" class="w-4 h-4"></i> Sheet 1: Executive Summary
+            </div>
+            <p class="text-xs text-slate-600">High-level KPI strip, target variances, and executive narrative bullet points.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+            <div class="font-bold text-sm text-slate-900 flex items-center gap-1.5 mb-1 text-emerald-700">
+              <i data-lucide="table" class="w-4 h-4"></i> Sheet 2: Brand Performance
+            </div>
+            <p class="text-xs text-slate-600">25 Top brands matrix with `=G2/F2` margin formulas and `=J2/E2` return rate alerts.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-4 bg-slate-50">
+            <div class="font-bold text-sm text-slate-900 flex items-center gap-1.5 mb-1 text-emerald-700">
+              <i data-lucide="calendar" class="w-4 h-4"></i> Sheet 3: Weekly Financials
+            </div>
+            <p class="text-xs text-slate-600">52-week time-series model with cumulative running revenue `=SUM($D$2:D2)`.</p>
+          </div>
+        </div>
+
+        <!-- Excel Preview Table -->
+        <div class="border border-slate-300 rounded-xl overflow-hidden shadow-sm">
+          <div class="bg-slate-100 px-4 py-2 text-xs font-bold text-slate-800 border-b border-slate-300 flex items-center justify-between">
+            <span>Interactive Excel Sheet Preview: `walmart_executive_model.xlsx`</span>
+            <span class="text-xs bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded">Ready for Download</span>
+          </div>
+          <div class="p-4 overflow-x-auto custom-scrollbar">
+            <table class="w-full text-xs text-left border-collapse border border-slate-300">
+              <thead class="bg-[#041E42] text-white">
+                <tr>
+                  <th class="p-2 border border-slate-400">Brand ID</th>
+                  <th class="p-2 border border-slate-400">Product Brand</th>
+                  <th class="p-2 border border-slate-400">Category</th>
+                  <th class="p-2 border border-slate-400 text-right">Transactions</th>
+                  <th class="p-2 border border-slate-400 text-right">Revenue ($)</th>
+                  <th class="p-2 border border-slate-400 text-right">Profit ($)</th>
+                  <th class="p-2 border border-slate-400 text-right">Profit Margin Formula</th>
+                  <th class="p-2 border border-slate-400 text-right">Return Rate Formula</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white">
+                <tr><td class="p-2 border border-slate-300 text-center">1</td><td class="p-2 border border-slate-300 font-semibold text-walmart-blue">Hermanos</td><td class="p-2 border border-slate-300">Produce & Grocery</td><td class="p-2 border border-slate-300 text-right">5,341</td><td class="p-2 border border-slate-300 text-right">$37,100</td><td class="p-2 border border-slate-300 text-right font-medium">$21,753</td><td class="p-2 border border-slate-300 text-right bg-emerald-100 font-bold text-emerald-800">=G2/F2 (58.64%)</td><td class="p-2 border border-slate-300 text-right font-medium">=J2/E2 (0.95%)</td></tr>
+                <tr><td class="p-2 border border-slate-300 text-center">2</td><td class="p-2 border border-slate-300 font-semibold text-walmart-blue">Ebony</td><td class="p-2 border border-slate-300">Pantry & Spices</td><td class="p-2 border border-slate-300 text-right">5,238</td><td class="p-2 border border-slate-300 text-right">$34,030</td><td class="p-2 border border-slate-300 text-right font-medium">$20,354</td><td class="p-2 border border-slate-300 text-right bg-emerald-100 font-bold text-emerald-800">=G3/F3 (59.81%)</td><td class="p-2 border border-slate-300 text-right font-medium">=J3/E3 (0.96%)</td></tr>
+                <tr><td class="p-2 border border-slate-300 text-center">3</td><td class="p-2 border border-slate-300 font-semibold text-walmart-blue">Tell Tale</td><td class="p-2 border border-slate-300">Beverages</td><td class="p-2 border border-slate-300 text-right">5,132</td><td class="p-2 border border-slate-300 text-right">$34,420</td><td class="p-2 border border-slate-300 text-right font-medium">$19,982</td><td class="p-2 border border-slate-300 text-right bg-emerald-100 font-bold text-emerald-800">=G4/F4 (58.05%)</td><td class="p-2 border border-slate-300 text-right font-medium">=J4/E4 (0.99%)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: TABLEAU BLUEPRINTS -->
+    <!-- ========================================================================= -->
+    <div id="tab-content-tableau" class="tab-pane hidden space-y-6">
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
+        <div class="border-b border-slate-200 pb-4 mb-6 flex items-center justify-between flex-wrap gap-3">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2">
+              <i data-lucide="pie-chart" class="w-6 h-6 text-blue-600"></i>
+              Tableau Public & Desktop Architecture
+            </h2>
+            <p class="text-xs text-slate-500 mt-1">Calculated fields, Level of Detail (LOD) expressions, parameters, and layout blueprints by Aman Dwivedi</p>
+          </div>
+          <a href="tableau/tableau_workbook_guide.md" download class="text-xs bg-blue-600 hover:bg-blue-700 text-white font-semibold px-3 py-1.5 rounded flex items-center gap-1.5 shadow-sm">
+            <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Download Tableau Blueprint (.md)
+          </a>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
-          <!-- Insight Card 1 -->
-          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 hover:border-walmart-blue transition">
-            <div class="flex items-center gap-3 mb-2">
-              <div class="w-8 h-8 rounded-lg bg-blue-100 text-walmart-blue flex items-center justify-center font-bold">1</div>
-              <h3 class="font-bold text-slate-900 text-sm">📍 Portland Store Milestone (December)</h3>
-            </div>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Portland reached over <strong>1,000 sales transactions in December</strong>, establishing itself as one of the highest-performing urban store locations in the Pacific Northwest corridor. A dedicated Power BI bookmark was created to filter directly into this high-velocity store.
-            </p>
-          </div>
-
-          <!-- Insight Card 2 -->
-          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 hover:border-walmart-blue transition">
-            <div class="flex items-center gap-3 mb-2">
-              <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">2</div>
-              <h3 class="font-bold text-slate-900 text-sm">🏆 Top 10 Product Brands Driver</h3>
-            </div>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              The top 10 product brands (led by <em>Hermanos, Ebony, Tell Tale</em>, and <em>Tri-State</em>) generate over <strong>25% (1/4th) of overall retail revenue</strong> and consistently exceed their individual revenue targets with profit margins above 58%.
-            </p>
-          </div>
-
-          <!-- Insight Card 3 -->
-          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 hover:border-walmart-blue transition">
-            <div class="flex items-center gap-3 mb-2">
-              <div class="w-8 h-8 rounded-lg bg-rose-100 text-rose-700 flex items-center justify-center font-bold">3</div>
-              <h3 class="font-bold text-slate-900 text-sm">⚠️ Return Rate Anomaly (+2.9%)</h3>
-            </div>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              While current month transactions (+5.69%) and profit (+5.61%) showed strong growth, <strong>return rates rose by 2.9% (496 returns)</strong>. Conditional DAX alerts highlighted specific brands like <em>Horatio (1.25%)</em> and <em>Nationeel (1.18%)</em> that require quality assurance investigations.
-            </p>
-          </div>
-
-          <!-- Insight Card 4 -->
-          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 hover:border-walmart-blue transition">
-            <div class="flex items-center gap-3 mb-2">
-              <div class="w-8 h-8 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center font-bold">4</div>
-              <h3 class="font-bold text-slate-900 text-sm">🇲🇽 Mexico Market Expansion Opportunity</h3>
-            </div>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Mexico recorded <strong>72.81K transactions</strong> with a higher month-over-month profit acceleration than the US market. The business recommendation is to allocate additional logistics capacity and marketing spend to Mexico's retail hubs.
-            </p>
-          </div>
-
-        </div>
-
-        <!-- Project Authorship Callout -->
-        <div class="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-xl flex items-center justify-between flex-wrap gap-4">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-walmart-blue text-white flex items-center justify-center font-bold text-lg">AD</div>
-            <div>
-              <h4 class="text-sm font-bold text-slate-900">Project Architect: Aman Dwivedi</h4>
-              <p class="text-xs text-slate-600">Power BI Data Modeling, DAX Optimization & Business Intelligence Storytelling</p>
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+            <h3 class="text-xs font-bold text-slate-900 mb-2 flex items-center gap-1.5 text-walmart-blue">
+              <i data-lucide="code" class="w-4 h-4"></i> Tableau Calculated Field: Profit Margin
+            </h3>
+            <div class="bg-slate-900 text-slate-200 p-3 rounded-lg text-xs font-mono">
+              SUM([Profit]) / SUM([Revenue])
             </div>
           </div>
-          <div class="flex items-center gap-2">
-            <span class="text-xs bg-white border border-blue-200 text-walmart-blue px-3 py-1 rounded-md font-semibold">Walmart Market BI v1.0</span>
+
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+            <h3 class="text-xs font-bold text-slate-900 mb-2 flex items-center gap-1.5 text-walmart-blue">
+              <i data-lucide="code" class="w-4 h-4"></i> Tableau LOD Expression: Fixed Country Revenue
+            </h3>
+            <div class="bg-slate-900 text-slate-200 p-3 rounded-lg text-xs font-mono">
+              { FIXED [Store Country] : SUM([Revenue]) }
+            </div>
           </div>
         </div>
 
-      </div>
-
-    </div>
-
-    <!-- ========================================================================= -->
-    <!-- TAB 3: DATA MODEL & DAX SCHEMA -->
-    <!-- ========================================================================= -->
-    <div id="tab-content-dax" class="tab-pane hidden space-y-6">
-      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
-        <div class="border-b border-slate-200 pb-4 mb-6">
-          <h2 class="text-xl font-bold text-walmart-dark flex items-center gap-2">
-            <i data-lucide="network" class="w-6 h-6 text-walmart-blue"></i>
-            Star Schema & DAX Data Modeling Architecture
-          </h2>
-          <p class="text-xs text-slate-500 mt-1">Designed by Aman Dwivedi with 1-to-many relationships and optimized DAX measures</p>
+        <div class="mt-6 border border-slate-200 rounded-xl p-4 bg-blue-50/50">
+          <h3 class="text-xs font-bold text-slate-900 mb-2">Tableau 5-Sheet Dashboard Canvas Blueprint:</h3>
+          <ul class="text-xs text-slate-700 space-y-1.5 list-disc list-inside">
+            <li><strong>Sheet 1 (Executive BANs):</strong> Total Transactions, Profit, Returns with MoM Delta indicators.</li>
+            <li><strong>Sheet 2 (Brand Matrix):</strong> Highlight Table with dual green-to-red conditional stepped formatting.</li>
+            <li><strong>Sheet 3 (Symbol Map):</strong> Circle marks sized by transaction density with interactive Country filter action.</li>
+            <li><strong>Sheet 4 (52-Week Area Chart):</strong> Weekly revenue line with OLS trendline overlay from Tableau Analytics Pane.</li>
+            <li><strong>Sheet 5 (Bullet Graph):</strong> Actuals vs targets performance gauge.</li>
+          </ul>
         </div>
-
-        <!-- Schema Diagram preview -->
-        <div class="mb-6">
-          <h3 class="text-sm font-bold text-slate-800 mb-2">Power BI Model View (Star Schema):</h3>
-          <div class="rounded-xl overflow-hidden border border-slate-300 shadow-sm">
-            <img src="Dashboard 4.jpg" alt="Power BI Data Model Diagram" class="w-full object-cover max-h-96" />
-          </div>
-        </div>
-
-        <!-- Tables breakdown -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-          
-          <div class="border border-slate-200 rounded-lg p-3 bg-slate-50">
-            <div class="font-bold text-slate-900 flex items-center gap-1.5 mb-2 text-sm text-walmart-blue">
-              <i data-lucide="table" class="w-3.5 h-3.5"></i> Transaction_Data (Fact)
-            </div>
-            <ul class="space-y-1 text-slate-600 list-disc list-inside">
-              <li>customer_id (FK)</li>
-              <li>product_id (FK)</li>
-              <li>quantity</li>
-              <li>stock_date</li>
-              <li>store_id (FK)</li>
-              <li>transaction_date (FK &rarr; Calendar)</li>
-            </ul>
-          </div>
-
-          <div class="border border-slate-200 rounded-lg p-3 bg-slate-50">
-            <div class="font-bold text-slate-900 flex items-center gap-1.5 mb-2 text-sm text-walmart-blue">
-              <i data-lucide="table" class="w-3.5 h-3.5"></i> Return_Data (Fact)
-            </div>
-            <ul class="space-y-1 text-slate-600 list-disc list-inside">
-              <li>product_id (FK)</li>
-              <li>quantity</li>
-              <li>return_date (FK)</li>
-              <li>store_id (FK)</li>
-            </ul>
-          </div>
-
-          <div class="border border-slate-200 rounded-lg p-3 bg-slate-50">
-            <div class="font-bold text-slate-900 flex items-center gap-1.5 mb-2 text-sm text-walmart-blue">
-              <i data-lucide="table" class="w-3.5 h-3.5"></i> Products (Dimension)
-            </div>
-            <ul class="space-y-1 text-slate-600 list-disc list-inside">
-              <li>product_id (PK)</li>
-              <li>Product_Brand</li>
-              <li>discount_price</li>
-              <li>low_fat</li>
-              <li>Price_Tier</li>
-            </ul>
-          </div>
-
-          <div class="border border-slate-200 rounded-lg p-3 bg-slate-50">
-            <div class="font-bold text-slate-900 flex items-center gap-1.5 mb-2 text-sm text-walmart-blue">
-              <i data-lucide="table" class="w-3.5 h-3.5"></i> Stores (Dimension)
-            </div>
-            <ul class="space-y-1 text-slate-600 list-disc list-inside">
-              <li>store_id (PK)</li>
-              <li>store_city, store_state, store_country</li>
-              <li>area_code, grocery_sqft</li>
-              <li>first_opened_date, last_remodel_date</li>
-            </ul>
-          </div>
-
-          <div class="border border-slate-200 rounded-lg p-3 bg-slate-50">
-            <div class="font-bold text-slate-900 flex items-center gap-1.5 mb-2 text-sm text-walmart-blue">
-              <i data-lucide="table" class="w-3.5 h-3.5"></i> Calendar (Dimension)
-            </div>
-            <ul class="space-y-1 text-slate-600 list-disc list-inside">
-              <li>date (PK)</li>
-              <li>Day Name, Month, Year</li>
-              <li>End of Month</li>
-            </ul>
-          </div>
-
-          <div class="border border-slate-200 rounded-lg p-3 bg-slate-50">
-            <div class="font-bold text-slate-900 flex items-center gap-1.5 mb-2 text-sm text-walmart-blue">
-              <i data-lucide="table" class="w-3.5 h-3.5"></i> Regions & Customers
-            </div>
-            <ul class="space-y-1 text-slate-600 list-disc list-inside">
-              <li>region_id (PK), sales_district, sales_region</li>
-              <li>customer_id (PK), demographics</li>
-            </ul>
-          </div>
-
-        </div>
-
       </div>
     </div>
 
     <!-- ========================================================================= -->
-    <!-- TAB 4: VIDEO DEMO -->
+    <!-- TAB 6: VIDEO DEMO -->
     <!-- ========================================================================= -->
     <div id="tab-content-video" class="tab-pane hidden space-y-6">
       <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
@@ -587,7 +737,7 @@
           <div>
             <h2 class="text-xl font-bold text-walmart-dark flex items-center gap-2">
               <i data-lucide="film" class="w-6 h-6 text-walmart-blue"></i>
-              Live Power BI Interactive Walkthrough
+              Live Interactive BI Walkthrough Video
             </h2>
             <p class="text-xs text-slate-500 mt-0.5">Presented & Built by Aman Dwivedi</p>
           </div>
@@ -606,7 +756,7 @@
     </div>
 
     <!-- ========================================================================= -->
-    <!-- TAB 5: PDF REPORT PREVIEW -->
+    <!-- TAB 7: PDF REPORT PREVIEW -->
     <!-- ========================================================================= -->
     <div id="tab-content-pdf" class="tab-pane hidden space-y-6">
       <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6">
@@ -636,24 +786,24 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
         <span class="text-walmart-yellow font-bold text-base">✻</span>
-        <span><strong>Walmart Market Intelligence Report</strong> &copy; 2026</span>
+        <span><strong>Walmart Market Intelligence Platform</strong> &copy; 2026</span>
         <span class="text-slate-600">|</span>
         <span class="text-slate-300">Created by <strong class="text-white">Aman Dwivedi</strong></span>
       </div>
-      <div class="flex items-center gap-4 text-slate-300">
-        <span class="bg-slate-800 px-2.5 py-1 rounded text-slate-300 border border-slate-700">Power BI Desktop</span>
-        <span class="bg-slate-800 px-2.5 py-1 rounded text-slate-300 border border-slate-700">DAX Calculations</span>
-        <span class="bg-slate-800 px-2.5 py-1 rounded text-slate-300 border border-slate-700">Star Schema</span>
+      <div class="flex items-center gap-2 text-[11px] flex-wrap">
+        <span class="bg-slate-800 px-2 py-0.5 rounded text-emerald-400 border border-slate-700">Python 3.13</span>
+        <span class="bg-slate-800 px-2 py-0.5 rounded text-amber-400 border border-slate-700">SQL & SQLite</span>
+        <span class="bg-slate-800 px-2 py-0.5 rounded text-yellow-400 border border-slate-700">Power BI Desktop</span>
+        <span class="bg-slate-800 px-2 py-0.5 rounded text-emerald-300 border border-slate-700">Excel Financials</span>
+        <span class="bg-slate-800 px-2 py-0.5 rounded text-blue-300 border border-slate-700">Tableau Architecture</span>
       </div>
     </div>
   </footer>
 
   <!-- JAVASCRIPT APPLICATION LOGIC -->
   <script>
-    // Initialize Lucide Icons
     lucide.createIcons();
 
-    // BRAND DATASET
     const brandData = [
       { name: "Hermanos", txns: 5341, profit: 21753, margin: 58.64, retRate: 0.95, region: "all" },
       { name: "Ebony", txns: 5238, profit: 20354, margin: 59.81, retRate: 0.96, region: "all" },
@@ -682,36 +832,29 @@
       { name: "CDR", txns: 3078, profit: 12062, margin: 58.98, retRate: 1.11, region: "all" }
     ];
 
-    // REGIONAL AGGREGATES
     const regionMetrics = {
-      all: { txns: "18,325", targetTxns: "17,339 (+5.69%)", profit: "$71,682", targetProfit: "$67,872 (+5.61%)", returns: "496", targetReturns: "482 (-2.9%)", revenue: "$449,627", gauge: "$120K", gaugeVal: 120 },
-      USA: { txns: "9,602", targetTxns: "9,100 (+5.51%)", profit: "$37,560", targetProfit: "$35,500 (+5.80%)", returns: "260", targetReturns: "250 (-4.0%)", revenue: "$235,500", gauge: "$62.8K", gaugeVal: 62.8 },
-      Mexico: { txns: "7,440", targetTxns: "6,980 (+6.59%)", profit: "$29,100", targetProfit: "$27,400 (+6.20%)", returns: "201", targetReturns: "195 (-3.0%)", revenue: "$182,300", gauge: "$48.6K", gaugeVal: 48.6 },
-      Canada: { txns: "1,283", targetTxns: "1,259 (+1.90%)", profit: "$5,022", targetProfit: "$4,972 (+1.00%)", returns: "35", targetReturns: "37 (+5.4%)", revenue: "$31,827", gauge: "$8.6K", gaugeVal: 8.6 }
+      all: { txns: "18,325", profit: "$71,682", returns: "496", revenue: "$449,627", gauge: "$120K" },
+      USA: { txns: "9,602", profit: "$37,560", returns: "260", revenue: "$235,500", gauge: "$62.8K" },
+      Mexico: { txns: "7,440", profit: "$29,100", returns: "201", revenue: "$182,300", gauge: "$48.6K" },
+      Canada: { txns: "1,283", profit: "$5,022", returns: "35", revenue: "$31,827", gauge: "$8.6K" }
     };
 
     let currentRegion = 'all';
 
-    // RENDER BRAND TABLE
     function renderBrandTable(brands) {
       const tbody = document.getElementById('brandTableBody');
       tbody.innerHTML = '';
-
       const maxTxns = Math.max(...brands.map(b => b.txns));
 
       brands.forEach(item => {
         const tr = document.createElement('tr');
         tr.className = "hover:bg-slate-50 transition border-b border-slate-100";
-        
-        // Progress bar width for transactions
         const barWidth = Math.round((item.txns / maxTxns) * 100);
 
-        // Profit Margin Color Badge
         let marginClass = "text-emerald-700 bg-emerald-50";
         if (item.margin < 58.5) marginClass = "text-amber-700 bg-amber-50";
         if (item.margin > 61.0) marginClass = "text-emerald-800 bg-emerald-100 font-bold";
 
-        // Return Rate Alert
         let returnClass = "text-slate-600";
         if (item.retRate >= 1.10) returnClass = "text-rose-700 bg-rose-50 font-bold";
         else if (item.retRate <= 0.85) returnClass = "text-emerald-700 font-semibold";
@@ -750,7 +893,6 @@
       renderBrandTable(filtered);
     }
 
-    // REGION FILTER BUTTONS
     function filterRegion(reg) {
       currentRegion = reg;
       document.querySelectorAll('.region-btn').forEach(btn => {
@@ -764,7 +906,6 @@
         activeBtn.classList.add('bg-walmart-blue', 'text-white');
       }
 
-      // Update KPIs
       const m = regionMetrics[reg] || regionMetrics.all;
       document.getElementById('kpi-txns').textContent = m.txns;
       document.getElementById('kpi-profit').textContent = m.profit;
@@ -776,7 +917,6 @@
       updateMapFocus(reg);
     }
 
-    // TAB SWITCHING
     function switchTab(tabId) {
       document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
       document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -793,13 +933,27 @@
         activeBtn.classList.remove('text-slate-300');
       }
 
-      // If switching to topline, trigger map invalidation so it renders cleanly
-      if (tabId === 'topline' && window.map) {
+      if (tabId === 'powerbi' && window.map) {
         setTimeout(() => window.map.invalidateSize(), 150);
       }
     }
 
-    // SPARKLINES GENERATION
+    function showSqlQuery(qNum) {
+      document.querySelectorAll('.sql-panel').forEach(p => p.classList.add('hidden'));
+      document.querySelectorAll('.sql-tab-btn').forEach(b => {
+        b.classList.remove('bg-amber-500', 'text-white');
+        b.classList.add('bg-slate-100', 'text-slate-700');
+      });
+
+      const p = document.getElementById(`sql-panel-${qNum}`);
+      const b = document.getElementById(`sql-tab-${qNum}`);
+      if (p) p.classList.remove('hidden');
+      if (b) {
+        b.classList.add('bg-amber-500', 'text-white');
+        b.classList.remove('bg-slate-100', 'text-slate-700');
+      }
+    }
+
     function createSparkline(canvasId, data, color) {
       const ctx = document.getElementById(canvasId).getContext('2d');
       return new Chart(ctx, {
@@ -820,15 +974,11 @@
           responsive: true,
           maintainAspectRatio: false,
           plugins: { legend: { display: false }, tooltip: { enabled: false } },
-          scales: {
-            x: { display: false },
-            y: { display: false }
-          }
+          scales: { x: { display: false }, y: { display: false } }
         }
       });
     }
 
-    // 52-WEEK REVENUE CHART
     function createWeeklyRevenueChart() {
       const ctx = document.getElementById('weeklyRevenueChart').getContext('2d');
       const weeks = Array.from({ length: 52 }, (_, i) => `W${i + 1}`);
@@ -855,41 +1005,18 @@
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              callbacks: {
-                label: (ctx) => `Revenue: $${ctx.parsed.y}K (1998)`
-              }
-            }
-          },
+          plugins: { legend: { display: false } },
           scales: {
-            x: {
-              grid: { display: false },
-              ticks: {
-                maxTicksLimit: 12,
-                font: { size: 10 }
-              }
-            },
-            y: {
-              beginAtZero: true,
-              max: 60,
-              ticks: {
-                callback: (v) => `$${v}K`,
-                font: { size: 10 }
-              },
-              grid: { color: '#F1F5F9' }
-            }
+            x: { grid: { display: false }, ticks: { maxTicksLimit: 12, font: { size: 10 } } },
+            y: { beginAtZero: true, max: 60, ticks: { callback: (v) => `$${v}K`, font: { size: 10 } }, grid: { color: '#F1F5F9' } }
           }
         }
       });
     }
 
-    // GAUGE CHART
-    let gaugeChartInstance;
     function createGaugeChart() {
       const ctx = document.getElementById('gaugeChart').getContext('2d');
-      gaugeChartInstance = new Chart(ctx, {
+      new Chart(ctx, {
         type: 'doughnut',
         data: {
           labels: ['Achieved', 'Remaining'],
@@ -905,16 +1032,12 @@
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: {
-            legend: { display: false },
-            tooltip: { enabled: false }
-          },
+          plugins: { legend: { display: false }, tooltip: { enabled: false } },
           cutout: '76%'
         }
       });
     }
 
-    // LEAFLET MAP SETUP
     let map;
     const storeLocations = [
       { name: "Portland Store #104", city: "Portland", country: "USA", lat: 45.5152, lng: -122.6784, txns: 1050, note: "⭐ Hits 1,000+ sales milestone in Dec" },
@@ -922,7 +1045,7 @@
       { name: "Los Angeles Central", city: "Los Angeles", country: "USA", lat: 34.0522, lng: -118.2437, txns: 1250 },
       { name: "San Francisco Bay", city: "San Francisco", country: "USA", lat: 37.7749, lng: -122.4194, txns: 880 },
       { name: "Dallas Mega Hub", city: "Dallas", country: "USA", lat: 32.7767, lng: -96.7970, txns: 1100 },
-      { name: "Chicago Metro", city: "Chicago", country: "USA", lat: 41.8781, lng: -87.6298, txns: 990 },
+      { name: "Chicago North", city: "Chicago", country: "USA", lat: 41.8781, lng: -87.6298, txns: 990 },
       { name: "New York Midtown", city: "New York", country: "USA", lat: 40.7128, lng: -74.0060, txns: 1320 },
       { name: "Mexico City Centro", city: "Mexico City", country: "Mexico", lat: 19.4326, lng: -99.1332, txns: 1450, note: "🔥 Fast Growth Corridor" },
       { name: "Guadalajara Hub", city: "Guadalajara", country: "Mexico", lat: 20.6597, lng: -103.3496, txns: 890 },
@@ -932,8 +1055,6 @@
       { name: "Montreal East", city: "Montreal", country: "Canada", lat: 45.5017, lng: -73.5673, txns: 480 }
     ];
 
-    let markers = [];
-
     function initMap() {
       map = L.map('walmartMap', {
         center: [38.0, -97.0],
@@ -941,11 +1062,10 @@
         zoomControl: true,
         scrollWheelZoom: false
       });
-
       window.map = map;
 
       L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
+        attribution: '&copy; OpenStreetMap &copy; CARTO',
         subdomains: 'abcd',
         maxZoom: 19
       }).addTo(map);
@@ -972,36 +1092,23 @@
             ${store.note ? `<div class="mt-1 text-[11px] text-emerald-600 font-semibold">${store.note}</div>` : ''}
           </div>
         `);
-
-        marker.storeData = store;
-        markers.push(marker);
       });
     }
 
     function updateMapFocus(reg) {
       if (!map) return;
-      if (reg === 'all') {
-        map.setView([38.0, -97.0], 3);
-      } else if (reg === 'USA') {
-        map.setView([37.0902, -95.7129], 4);
-      } else if (reg === 'Mexico') {
-        map.setView([23.6345, -102.5528], 5);
-      } else if (reg === 'Canada') {
-        map.setView([53.1355, -106.3468], 3);
-      }
+      if (reg === 'all') map.setView([38.0, -97.0], 3);
+      else if (reg === 'USA') map.setView([37.0902, -95.7129], 4);
+      else if (reg === 'Mexico') map.setView([23.6345, -102.5528], 5);
+      else if (reg === 'Canada') map.setView([53.1355, -106.3468], 3);
     }
 
-    // INITIALIZATION ON LOAD
     document.addEventListener('DOMContentLoaded', () => {
       renderBrandTable(brandData);
-
-      // Create Sparklines
       createSparkline('sparklineTxns', [15200, 15800, 16100, 16900, 17300, 17800, 18325], 'rgb(16, 185, 129)');
       createSparkline('sparklineProfit', [58000, 61000, 62500, 65000, 68000, 69500, 71682], 'rgb(16, 185, 129)');
       createSparkline('sparklineReturns', [420, 440, 450, 460, 470, 485, 496], 'rgb(225, 29, 72)');
       createSparkline('sparklineRevenue', [32000, 34000, 35000, 36500, 38000, 40000, 44962], 'rgb(0, 113, 206)');
-
-      // Create Main Visuals
       createWeeklyRevenueChart();
       createGaugeChart();
       initMap();

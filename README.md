@@ -1,169 +1,133 @@
-# 🛒 Walmart Market Business Intelligence Dashboard (USA • Mexico • Canada)
+# 🛒 Walmart Market End-to-End Data Analytics Platform (USA • Mexico • Canada)
 
-> **Created & Designed by [Aman Dwivedi](https://github.com/)**  
-> *End-to-End Business Intelligence, Data Modeling, DAX Calculations & Interactive Web Analytics*
+> **Created & Architected by [Aman Dwivedi](https://github.com/)**  
+> *A comprehensive enterprise data analytics portfolio spanning **Python**, **SQL**, **Power BI**, **Excel**, and **Tableau**.*
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-0071CE?style=for-the-badge&logo=github)](https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY_NAME/)
 [![Author](https://img.shields.io/badge/Author-Aman%20Dwivedi-FFC220?style=for-the-badge&logo=linkedin&logoColor=black)](https://github.com/)
+[![Python](https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![SQL](https://img.shields.io/badge/SQL-SQLite%20%2F%20PostgreSQL-4479A1?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
 [![Power BI](https://img.shields.io/badge/Power_BI-Desktop-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
-[![DAX](https://img.shields.io/badge/DAX-Data_Analysis_Expressions-237804?style=for-the-badge)](https://learn.microsoft.com/en-us/dax/)
+[![Excel](https://img.shields.io/badge/Excel-Financial_Model-217346?style=for-the-badge&logo=microsoftexcel&logoColor=white)](https://www.microsoft.com/excel)
+[![Tableau](https://img.shields.io/badge/Tableau-Public%20%2F%20Desktop-E97627?style=for-the-badge&logo=tableau&logoColor=white)](https://public.tableau.com/)
 
 ---
 
-## 📽️ Project Overview & Live Walkthrough
+## 🎯 Project Overview
 
-This project delivers an executive-level **Business Intelligence Dashboard** analyzing Walmart's cross-border retail performance across **Canada, Mexico, and the United States (1998)**.
+This project delivers a multi-tool **Data Analytics & Business Intelligence Solution** analyzing Walmart's cross-border retail performance across **Canada, Mexico, and the United States (1998)**.
 
-- 🌐 **Live Web App / Demo**: [Click here for Live Interactive Dashboard](https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY_NAME/)
-- 🎥 **Video Demo Walkthrough**: [Watch on Google Drive](https://drive.google.com/file/d/1KeaSngeepejP-b9MpzTiRgT_6mAvsQJD/view?usp=sharing) or view the included `DEMO VIDEO Power BI.mp4`.
-- 📊 **Power BI Source File**: `Wallmart Market Report(Power BI).pbix`
-- 📑 **Exported PDF Report**: `wallamart power bi dashboard.pdf`
+The project demonstrates complete proficiency across the entire data lifecycle:
+1. **Python**: Exploratory Data Analysis (EDA), Statistical **Ordinary Least Squares (OLS)** linear trend modeling, and automated ETL.
+2. **SQL**: Relational database modeling (`walmart_analytics.db`), Window functions (`LAG`, `LEAD`, `DENSE_RANK`), CTEs, and quality anomaly detection flags.
+3. **Power BI**: Star Schema data modeling, 1-to-many relationships, dynamic DAX measures, time-intelligence, and interactive slicers.
+4. **Excel**: Multi-sheet financial model with dynamic formulas (`XLOOKUP`, `SUMIFS`), margin calculations, and conditional formatting.
+5. **Tableau**: Visual calculated fields, Level of Detail (LOD) expressions, parameters, and 5-sheet interactive dashboard canvas architecture.
 
 ---
 
-## 🚀 How to Run on Localhost
+## 🚀 Interactive Live Web App & Localhost
 
-You have multiple easy options to run this dashboard on your local machine:
+Run the unified interactive portfolio locally or access the web app:
 
-### Option 1: One-Click Launcher (Windows)
-Double-click `run_local.bat` in the project folder. It will start the server and open your browser automatically at `http://localhost:8000`.
-
-### Option 2: Python Localhost Server
-Open your terminal inside this folder and run:
 ```bash
+# 1. Run local server (opens automatically at http://localhost:8000)
 python server.py
-```
-Or standard Python HTTP server:
-```bash
-python -m http.server 8000
-```
-Then visit: `http://localhost:8000` in your web browser.
 
-### Option 3: Node.js / NPM
-```bash
-npm start
+# Or double-click run_local.bat on Windows
 ```
-
-### Option 4: Direct Browser Open
-Simply double-click `index.html` to open it in any modern browser (Chrome, Edge, Safari, Firefox).
 
 ---
 
-## 🌐 How to Upload to GitHub & Deploy Live Demo (Step-by-Step)
+## 🛠️ Tool-by-Tool Implementation Breakdown
 
-Follow these simple steps to put this project on your GitHub with a 100% free, active **Live Demo URL**:
+### 🐍 1. Python Data Science & Statistical OLS Suite
+- **Script**: [`python/walmart_eda_analysis.py`](file:///c:/Users/dwive/Downloads/Power-BI-Walmart-Dashboard-main/python/walmart_eda_analysis.py)
+- **Jupyter Notebook**: [`walmart_data_analytics.ipynb`](file:///c:/Users/dwive/Downloads/Power-BI-Walmart-Dashboard-main/walmart_data_analytics.ipynb)
+- **Statistical Regression**:
+  - Linear Trend Equation: $y = 374.53 \cdot x + 20247.96$
+  - Coefficient of Determination: $R^2 = 0.7302$
+  - P-Value: $7.81 \times 10^{-16}$ (Statistically significant revenue acceleration into Q4)
+- **Run Command**:
+  ```bash
+  python python/walmart_eda_analysis.py
+  ```
 
-### Step 1: Initialize Git and Commit Your Files
-Open your terminal / PowerShell in this folder and run:
+---
+
+### 🗄️ 2. SQL Analytics Studio (SQLite / PostgreSQL / MySQL)
+- **Schema DDL**: [`sql/walmart_schema.sql`](file:///c:/Users/dwive/Downloads/Power-BI-Walmart-Dashboard-main/sql/walmart_schema.sql)
+- **Analytical Queries**: [`sql/walmart_queries.sql`](file:///c:/Users/dwive/Downloads/Power-BI-Walmart-Dashboard-main/sql/walmart_queries.sql)
+- **Database File**: `walmart_analytics.db`
+- **Key Techniques Used**:
+  - Common Table Expressions (`WITH ... AS`) for Pareto distribution
+  - Window Functions (`LAG()`, `LEAD()`, `DENSE_RANK() OVER (PARTITION BY store_country)`)
+  - Anomaly Flagging (`CASE WHEN return_rate >= 0.0110 THEN '🚨 HIGH RISK'`)
+- **Run Command**:
+  ```bash
+  python sql/run_queries.py
+  ```
+
+---
+
+### 📊 3. Power BI Desktop & DAX Architecture
+- **PBIX Report**: [`Wallmart Market Report(Power BI).pbix`](file:///c:/Users/dwive/Downloads/Power-BI-Walmart-Dashboard-main/Wallmart%20Market%20Report(Power%20BI).pbix)
+- **DAX Measures Catalog**: [`powerbi/dax_measures.dax`](file:///c:/Users/dwive/Downloads/Power-BI-Walmart-Dashboard-main/powerbi/dax_measures.dax)
+- **Key DAX Formulas**:
+  - `Total Profit = [Total Revenue] - [Total Cost]`
+  - `Profit Margin = DIVIDE([Total Profit], [Total Revenue], 0)`
+  - `Return Rate = DIVIDE([Total Returns], [Total Transactions], 0)`
+  - `MoM Growth % = DIVIDE([Current Month Txns] - [Last Month Txns], [Last Month Txns], 0)`
+
+---
+
+### 📑 4. Excel Financial Modeling
+- **Workbook File**: [`excel/walmart_executive_model.xlsx`](file:///c:/Users/dwive/Downloads/Power-BI-Walmart-Dashboard-main/excel/walmart_executive_model.xlsx)
+- **Structure**:
+  - `Executive Summary`: High-level BAN cards and variance benchmarks.
+  - `Brand Performance`: 25-brand matrix with `=G2/F2` profit margin formulas and `=J2/E2` return rate formulas with conditional formatting.
+  - `Weekly Financials`: 52-week rolling revenue with cumulative running total formulas `=SUM($D$2:D2)`.
+
+---
+
+### 📈 5. Tableau Public & Desktop Architecture
+- **Implementation Guide**: [`tableau/tableau_workbook_guide.md`](file:///c:/Users/dwive/Downloads/Power-BI-Walmart-Dashboard-main/tableau/tableau_workbook_guide.md)
+- **Calculated Fields & LODs**:
+  - Profit Margin: `SUM([Profit]) / SUM([Revenue])`
+  - Fixed Country Revenue (LOD): `{ FIXED [Store Country] : SUM([Revenue]) }`
+  - MoM Table Calculation: `(ZN(SUM([Revenue])) - LOOKUP(ZN(SUM([Revenue])), -1)) / ABS(LOOKUP(ZN(SUM([Revenue])), -1))`
+
+---
+
+## 🌐 How to Push to GitHub & Deploy 100% Free Live Demo
+
+### Step 1: Commit Local Changes
 ```bash
-# 1. Initialize git repository
-git init
-
-# 2. Add all project files
 git add .
-
-# 3. Commit the files
-git commit -m "Initial commit: Walmart BI Dashboard by Aman Dwivedi"
-
-# 4. Set default branch to main
+git commit -m "feat: Add full Data Analytics stack (Python, SQL, Power BI, Excel, Tableau) - by Aman Dwivedi"
 git branch -M main
 ```
 
-### Step 2: Create a New Repository on GitHub
-1. Go to [GitHub](https://github.com/) and click **New Repository** (+ icon in top right).
-2. Name the repository: `walmart-bi-dashboard` (or any name you prefer).
-3. Keep it **Public** (required for free GitHub Pages).
-4. Do NOT initialize with README/license (we already have them).
-5. Click **Create repository**.
-
-### Step 3: Link and Push to GitHub
-Copy the repository URL and execute:
+### Step 2: Push to GitHub
 ```bash
-# Replace YOUR_USERNAME with your GitHub username
-git remote add origin https://github.com/YOUR_USERNAME/walmart-bi-dashboard.git
-
-# Push the code
+git remote add origin https://github.com/YOUR_GITHUB_USERNAME/walmart-data-analytics.git
 git push -u origin main
 ```
 
-### Step 4: Enable Free Live Demo via GitHub Pages
-1. On your GitHub repository page, click **Settings** (top tab).
-2. On the left sidebar under *Code and automation*, click **Pages**.
-3. Under **Build and deployment** &rarr; **Source**, select **Deploy from a branch**.
-4. Under **Branch**, select `main` and folder `/(root)`, then click **Save**.
-5. Wait 1–2 minutes! GitHub will generate your live demo link:
+### Step 3: Enable Free Live Demo (GitHub Pages)
+1. Go to repository **Settings** &rarr; **Pages**.
+2. Select **Source**: `Deploy from a branch`.
+3. Set **Branch**: `main` and folder `/(root)` &rarr; Click **Save**.
+4. Your live link will be ready at:
    ```
-   https://<YOUR_USERNAME>.github.io/walmart-bi-dashboard/
+   https://YOUR_GITHUB_USERNAME.github.io/walmart-data-analytics/
    ```
-6. Add this live link to your GitHub repository's **About** description and README badge!
-
----
-
-## 🔍 Key Dashboard Features
-
-### 1. KPI Cards & Month-over-Month Benchmarking
-- **Current Month Transactions**: `18,325` *(Target: 17,339 | +5.69%)*
-- **Current Month Profit**: `$71,682` *(Target: $67,872 | +5.61%)*
-- **Current Month Returns**: `496` *(Target: 482 | -2.90% alert)*
-- **Total Revenue (FY 1998)**: `$449,627` *(Avg Margin: 59.94%)*
-
-### 2. Product Brand Matrix (Top 30 Brands)
-- Conditional Data Bars on Transaction Volumes.
-- Dynamic Color-Scale formatting on Profit Margins (White to Green).
-- Return Rate warning indicators (White to Red) identifying product quality anomalies.
-
-### 3. Geographic Performance & Regional Drill-Down
-- Interactive Leaflet Store Distribution Map (USA, Mexico, Canada).
-- Treemap Breakdown: USA (*93.89K txns*), Mexico (*72.81K txns*), Canada (*12.77K txns*).
-- Highlight Bookmark: **"📍 Portland hits 1,000 sales in December"**.
-
-### 4. 52-Week Revenue Trending & Gauge Visual
-- Column chart tracking 1998 weekly revenue cycles, highlighting Q4 holiday peaks ($40K+ / week).
-- Revenue vs Target Gauge visualizing actuals ($120K) vs previous month target ($119.48K).
-
----
-
-## 🏗️ Data Model (Star Schema)
-
-The Power BI model is structured using an optimized Star Schema with 1-to-many relationships:
-
-```mermaid
-erDiagram
-    Calendar ||--o{ Transaction_Data : "transaction_date -> date"
-    Customers ||--o{ Transaction_Data : "customer_id"
-    Products ||--o{ Transaction_Data : "product_id"
-    Stores ||--o{ Transaction_Data : "store_id"
-    Stores ||--o{ Return_Data : "store_id"
-    Products ||--o{ Return_Data : "product_id"
-    Regions ||--o{ Stores : "region_id"
-```
-
-- **Fact Tables**: `Transaction_Data`, `Return_Data`
-- **Dimension Tables**: `Calendar`, `Customers`, `Products`, `Stores`, `Regions`
-
----
-
-## 📈 Top Business Insights
-
-1. **Portland Milestone**: Portland store crossed 1,000 sales in December, leading Pacific regional performance.
-2. **Top 10 Brands Pareto Rule**: The top 10 brands represent ~25% of gross revenue and achieve the highest gross margins (~60%).
-3. **Return Rate Warning**: Returns increased by 2.9% in the current period, led by brands *Horatio (1.25%)* and *Nationeel (1.18%)*.
-4. **Mexico Market Expansion**: Mexico demonstrated superior month-over-month profit velocity, representing a primary growth market for Walmart.
-
----
-
-## 🛠️ Tech Stack & Skills
-
-- **Business Intelligence**: Power BI Desktop, DAX, Power Query (M), Data Modeling, Star Schema
-- **Web Analytics & Frontend**: HTML5, CSS3, JavaScript (ES6+), Tailwind CSS, Chart.js, Leaflet.js, Lucide Icons
-- **Deployment**: GitHub Pages, Python `http.server`
 
 ---
 
 ## 👤 Author
 
 **Aman Dwivedi**  
-- Portfolio / BI Projects: [GitHub Profile](https://github.com/)  
-- Email: Contact via GitHub  
-
-*Special thanks to the open-source and Power BI community.*
+- **Role**: Data Analyst / Business Intelligence Engineer  
+- **Stack**: Python • SQL • Power BI • Excel • Tableau  
+- **GitHub**: [github.com](https://github.com/)

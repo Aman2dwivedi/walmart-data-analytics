@@ -95,6 +95,63 @@ Run the unified interactive portfolio locally or access the web app:
   - MoM Table Calculation: `(ZN(SUM([Revenue])) - LOOKUP(ZN(SUM([Revenue])), -1)) / ABS(LOOKUP(ZN(SUM([Revenue])), -1))`
 
 ---
+Top-Tier Visual Badges & Header:
+
+Dynamic badges for Live Interactive Demo, Author (Aman Dwivedi), Python 3.13, SQLite/SQL, Power BI Desktop, Excel Financial Model, Tableau, and Tailwind CSS.
+Full-Stack Architecture & Workflow Diagram:
+
+Clean Mermaid diagram illustrating the complete data pipeline from raw relational data → SQL database → Python OLS analysis → Power BI & Tableau → Web Hub.
+Side-by-Side Dashboard & Model Screenshots:
+
+Visual preview comparing the Topline Performance Dashboard, Star Schema Data Model, Market Insights, and Interactive Slicers.
+Executive KPI Scorecard Table:
+
+Structured breakdown of actual vs target benchmarks for 18,325 Transactions (+5.69%), 
+71
+,
+682
+P
+r
+o
+f
+i
+t
+(
++
+5.61
+71,682Profit(+5.61449,627 Net Revenue (59.94% Margin).
+Tool-by-Tool Technical Deep Dive:
+
+🐍 Python: Ordinary Least Squares (OLS) Linear Trend Regression (
+Revenue
+=
+374.53
+⋅
+Week
++
+20247.96
+Revenue=374.53⋅Week+20247.96, 
+R
+2
+=
+0.7302
+R 
+2
+ =0.7302, 
+p
+<
+0.001
+p<0.001), scatter plots, and Jupyter notebook walkthrough.
+🗄️ SQL: Relational database architecture, CTEs, Window functions (LAG, LEAD, DENSE_RANK), and CASE WHEN return risk anomaly detection.
+📊 Power BI: Star Schema (Fact tables: Transaction_Data, Return_Data, Dimensions: Calendar, Products, Stores, Regions), and DAX measures catalog.
+📑 Excel: Multi-sheet financial model with =G2/F2 margins, =J2/E2 return rates, and =SUM($D$2:D2) cumulative revenue formulas.
+📈 Tableau: Level of Detail (LOD) expressions ({FIXED [Store Country]: SUM([Revenue])}), calculated fields, and 5-sheet canvas layout.
+Strategic Business Recommendations:
+
+Portland December milestone replication, Top 10 brands Pareto rebates, return rate quality audits for Horatio and Nationeel, and Mexico logistics capital allocation.
+Clean Directory Tree & Terminal Commands:
+
+Step-by-step commands to clone, run the local server, run SQL queries, execute Python OLS regression, and launch Jupyter Notebook.
 
 ## 👤 Author
 

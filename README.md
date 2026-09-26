@@ -99,32 +99,6 @@ python server.py
 
 ---
 
-## 🌐 How to Push to GitHub & Deploy 100% Free Live Demo
-
-### Step 1: Commit Local Changes
-```bash
-git add .
-git commit -m "feat: Add full Data Analytics stack (Python, SQL, Power BI, Excel, Tableau) - by Aman Dwivedi"
-git branch -M main
-```
-
-### Step 2: Push to GitHub
-```bash
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/walmart-data-analytics.git
-git push -u origin main
-```
-
-### Step 3: Enable Free Live Demo (GitHub Pages)
-1. Go to repository **Settings** &rarr; **Pages**.
-2. Select **Source**: `Deploy from a branch`.
-3. Set **Branch**: `main` and folder `/(root)` &rarr; Click **Save**.
-4. Your live link will be ready at:
-   ```
-   https://YOUR_GITHUB_USERNAME.github.io/walmart-data-analytics/
-   ```
-
----
-
 ## 👤 Author
 
 **Aman Dwivedi**  

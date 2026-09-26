@@ -29,13 +29,10 @@ The project demonstrates complete proficiency across the entire data lifecycle:
 ## 🚀 Interactive Live Web App & Localhost
 
 Run the unified interactive portfolio locally or access the web app:
+
+
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-0071CE?style=for-the-badge&logo=github)](https://aman2dwivedi.github.io/walmart-data-analytics/)
 ```bash
-1. Run local server (opens automatically at http://localhost:8002/)
-python server.py
-
-# Or double-click run_local.bat on Windows
-```
 
 ---
 
